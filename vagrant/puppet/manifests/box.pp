@@ -17,6 +17,10 @@ package{ 'mysql-client':
     ensure => present,
 }
 
+package{ ['apache2', 'php5']:
+    ensure => present,
+}
+
 # == variables == #
 $db_name                   = 'test'
 $db_user                   = 'test'
