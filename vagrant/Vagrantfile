@@ -1,0 +1,33 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+require './config'
+include MyVars
+
+Vagrant.configure("2") do |config|
+
+  
+  config.vm.box     = OS
+  config.vm.box_url = OS_URL
+  config.vm.network "private_network", ip: IP
+
+  config.vm.provider "virtualbox" do |v|
+    v.memory = 2048
+    v.cpus = 1
+  end
+
+  config.vm.synced_folder "../", "/opt/silverstripe/project",
+      owner: "www-data",
+      group: "www-data"
+
+  config.vm.provision :shell, :path => OS_INIT
+
+  config.vm.provision "puppet" do |puppet|
+    #puppet.facter = { 
+    #    "web_user"   => "#{WEB_USER}",
+    #    "web_pass"   => "#{WEB_PASS}",
+    #} 
+    puppet.module_path    = ["puppet/modules/"]
+    puppet.manifests_path = "puppet/manifests"
+    puppet.manifest_file  = MANIFEST_FILE
+  end
+end
