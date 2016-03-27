@@ -3,7 +3,8 @@ PHP 5 - SilverStripe Course Material and Vagrant VM for developing SilverStripe 
 
 ## How to use
 
-```cd vagrant
+```
+cd vagrant
 ./install.bash
 ./run.bash
 ```
