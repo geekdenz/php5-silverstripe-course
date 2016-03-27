@@ -1,6 +1,8 @@
 # php5-silverstripe-course
 PHP 5 - SilverStripe Course Material and Vagrant VM for developing SilverStripe Applications.
 
+See https://youtu.be/obp9SQZ3U0U
+
 ## How to use
 
 ```
