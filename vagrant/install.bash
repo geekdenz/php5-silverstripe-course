@@ -19,4 +19,8 @@ sudo apt-get install puppet
 
 echo "=== Installing R10K === "
 sudo gem install r10k
+
+echo "=== Installing Vagrant Box === "
+vagrant box add ubuntu/wily64
+
 echo "=== Installation complete === "
